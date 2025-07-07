@@ -101,6 +101,26 @@ const APDTCLSystem = () => {
         remarks: [],
         type: "new",
       },
+      {
+        id: "APP002",
+        vendorId: "vendor1",
+        contractorName: "XYZ Builders",
+        address: "Dispur, Assam",
+        phone: "6002256663",
+        email: "contractor2@gmail.com",
+        additionalField1: "Test Field 1",
+        additionalField2: "Test Field 2",
+        documents: {
+          pan: "pan2.pdf",
+          gst: "gst2.pdf",
+          laborLicense: "labourlicense2.pdf",
+          photograph: "photograph2.png",
+        },
+        status: "pending_md",
+        submittedAt: new Date("2025-01-10"),
+        remarks: [],
+        type: "new",
+      },
     ];
     setApplications(sampleApps);
   }, []);
@@ -536,7 +556,9 @@ const APDTCLSystem = () => {
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <FileText className="h-8 w-8 text-blue-600 mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Register New RC</h3>
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                Register New RC
+              </h3>
               <p className="text-gray-800 mb-4">
                 Apply for a new registration certificate
               </p>
@@ -550,7 +572,9 @@ const APDTCLSystem = () => {
 
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <FileText className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Renew RC</h3>
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                Renew RC
+              </h3>
               <p className="text-gray-800 mb-4">
                 Renew your existing registration certificate
               </p>
@@ -561,7 +585,9 @@ const APDTCLSystem = () => {
 
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <Clock className="h-8 w-8 text-orange-600 mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Track Status</h3>
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                Track Status
+              </h3>
               <p className="text-gray-800 mb-4">
                 Monitor your application progress
               </p>
@@ -574,7 +600,9 @@ const APDTCLSystem = () => {
           {/* Applications List */}
           <div className="bg-white rounded-xl shadow-lg">
             <div className="p-6 border-b border-gray-200">
-              <h3 className="text-lg font-semibold">Your Applications</h3>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Your Applications
+              </h3>
             </div>
             <div className="divide-y divide-gray-200">
               {userApplications.length === 0 ? (
@@ -586,7 +614,9 @@ const APDTCLSystem = () => {
                   <div key={app.id} className="p-6">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <h4 className="font-semibold">{app.contractorName}</h4>
+                        <h4 className="font-semibold text-gray-900">
+                          {app.contractorName}
+                        </h4>
                         <p className="text-sm text-gray-900">
                           Application ID: {app.id}
                         </p>
@@ -847,13 +877,17 @@ const APDTCLSystem = () => {
           <div className="grid md:grid-cols-4 gap-6 mb-8">
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <User className="h-8 w-8 text-blue-600 mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Profile</h3>
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                Profile
+              </h3>
               <p className="text-gray-800">Manage your profile</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <FileText className="h-8 w-8 text-green-600 mb-4" />
-              <h3 className="text-lg font-semibold mb-2">New Registrations</h3>
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                New Registrations
+              </h3>
               <p className="text-gray-800">
                 {
                   filteredApplications.filter((app) => app.type === "new")
@@ -865,7 +899,9 @@ const APDTCLSystem = () => {
 
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <FileText className="h-8 w-8 text-orange-600 mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Renewals</h3>
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                Renewals
+              </h3>
               <p className="text-gray-800">
                 {
                   filteredApplications.filter((app) => app.type === "renewal")
@@ -877,7 +913,9 @@ const APDTCLSystem = () => {
 
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <Clock className="h-8 w-8 text-purple-600 mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Track Status</h3>
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                Track Status
+              </h3>
               <p className="text-gray-800">Monitor applications</p>
             </div>
           </div>
@@ -885,7 +923,7 @@ const APDTCLSystem = () => {
           {/* Applications List */}
           <div className="bg-white rounded-xl shadow-lg">
             <div className="p-6 border-b border-gray-200">
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-lg font-semibold text-gray-900">
                 {role === "ce" ? "All Applications" : "Pending Applications"}
               </h3>
             </div>
